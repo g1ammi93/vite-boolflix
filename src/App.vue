@@ -14,4 +14,14 @@ export default {
     <AppMain />
 </template>
 
-<style ></style>
+<style >
+.fas {
+    color: rgb(229, 207, 75);
+    cursor: pointer;
+}
+
+.far:hover {
+    color: rgb(229, 207, 75);
+    cursor: pointer;
+}
+</style>

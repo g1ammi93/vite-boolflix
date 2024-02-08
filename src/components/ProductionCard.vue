@@ -27,8 +27,16 @@ export default {
         }
     },
     methods: {
-        StarVote(vote) {
-            return Math.floor(Math.round(vote / 2));
+        starVote(vote) {
+            const fiveVote = Math.floor(Math.round(vote / 2));
+            const starFull = '<i class="fas fa-star"></i>';
+            const starEmpty = '<i class="far fa-star"></i>';
+
+            return starFull.repeat(fiveVote) + starEmpty.repeat(5 - fiveVote);
+
+        },
+        starPage(vote) {
+            return this.starVote(vote);
         }
     }
 };
@@ -43,9 +51,7 @@ export default {
             <img v-if="hasFlag" :src="flagSrc" :alt="lang" class="flag">
             <span v-else> {{ lang }} </span>
         </li>
-        <li>{{ StarVote(item.vote_average) }} <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"><i
-                    class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></i>
-        </li>
+        <li v-html="starPage(item.vote_average)"></li>
     </ul>
 </template>
 
