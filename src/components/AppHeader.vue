@@ -18,7 +18,7 @@ export default {
                 return;
             }
 
-            this.fetchApi('search/movie', 'movie');
+            this.fetchApi('search/movie', 'movies');
             this.fetchApi('search/tv', 'series');
         },
 
@@ -35,7 +35,7 @@ export default {
             }
             axios.get(`${baseUri}/${endpoint}`, apiConfg)
                 .then((res) => {
-                    store[collecion] = res.data.results;
+                    store[collection] = res.data.results;
                 })
 
                 .catch((err) => {
