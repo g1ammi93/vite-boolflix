@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios'
+import axios from 'axios';
 import { store } from '../data/store';
 import { api } from '../data/index';
 import SearchBar from './SearchBar.vue';
