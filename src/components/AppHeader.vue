@@ -14,8 +14,15 @@ export default {
         searchProduct() {
             if (!this.titleFilter) {
                 store.movies = [];
+                store.series = [];
                 return;
             }
+
+            this.fetchApi('search/movie', 'movie');
+            this.fetchApi('search/tv', 'series');
+        },
+
+        fetchApi(endpoint, collection) {
 
             const { baseUri, language, apiKey } = api;
 
@@ -26,9 +33,9 @@ export default {
                     language
                 }
             }
-            axios.get(`${baseUri}/search/movie`, apiConfg)
+            axios.get(`${baseUri}/${endpoint}`, apiConfg)
                 .then((res) => {
-                    store.movie = res.data.results;
+                    store[collecion] = res.data.results;
                 })
 
                 .catch((err) => {
