@@ -37,6 +37,13 @@ export default {
         },
         starPage(vote) {
             return 'Voto:' + this.starVote(vote);
+        },
+        overviewLength(overview) {
+            const maxLength = 200;
+            if (overview.lenght <= maxLength) {
+                return overview;
+            }
+            return overview.substring(0, maxLength) + '...';
         }
     }
 };
@@ -57,6 +64,7 @@ export default {
                     <span v-else> {{ lang }} </span>
                 </li>
                 <li v-html="starPage(item.vote_average)"></li>
+                <li> {{ overviewLength(item.overview) }}</li>
             </ul>
         </li>
     </ul>
