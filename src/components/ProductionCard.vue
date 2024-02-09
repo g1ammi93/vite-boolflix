@@ -36,7 +36,7 @@ export default {
 
         },
         starPage(vote) {
-            return this.starVote(vote);
+            return 'Voto:' + this.starVote(vote);
         }
     }
 };
@@ -44,19 +44,49 @@ export default {
 
 <template>
     <ul>
-        <li> <img :src="`${coverUri}${dimensionUri}/${item.backdrop_path}`" alt=""> </li>
-        <li>{{ item.title || item.name }} </li>
-        <li>{{ item.original_title || item.original_name }}</li>
-        <li>
-            <img v-if="hasFlag" :src="flagSrc" :alt="lang" class="flag">
-            <span v-else> {{ lang }} </span>
+        <li class="cover-container">
+            <img :src="item.backdrop_path ? `${coverUri}${dimensionUri}/${item.backdrop_path}` : 'https://www.altavod.com/assets/images/poster-placeholder.png'"
+                alt="" class="cover">
+            <ul class="overlay">
+
+                <li><span>Titolo:</span> {{ item.title || item.name }} </li>
+                <li><span>Titolo originale:</span>{{ item.original_title || item.original_name }}</li>
+                <li>
+                    <span>Lingua:</span>
+                    <img v-if="hasFlag" :src="flagSrc" :alt="lang" class="flag">
+                    <span v-else> {{ lang }} </span>
+                </li>
+                <li v-html="starPage(item.vote_average)"></li>
+            </ul>
         </li>
-        <li v-html="starPage(item.vote_average)"></li>
     </ul>
 </template>
 
 <style scoped >
 .flag {
     max-width: 80px;
+}
+
+.cover {
+    width: 342px;
+    height: 500px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+span {
+    font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-container {
+    position: relative;
 }
 </style>

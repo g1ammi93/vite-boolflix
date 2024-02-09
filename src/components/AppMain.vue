@@ -10,15 +10,43 @@ export default {
 
 <template>
     <main>
-        <section id="section-movie">
-            <h2>Movie</h2>
-            <ProductionCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
-        </section>
-        <section id="section-series">
-            <h2>Tv Series</h2>
-            <ProductionCard v-for="serie in store.series" :key="serie.id" :item="serie" />
-        </section>
+        <div class="container">
+            <section id="section-movie">
+                <h2>Movies</h2>
+                <div class="flex">
+                    <ProductionCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
+                </div>
+            </section>
+            <section id="section-series">
+                <h2>Tv Series</h2>
+                <div class="flex">
+                    <ProductionCard v-for="serie in store.series" :key="serie.id" :item="serie" />
+                </div>
+            </section>
+        </div>
     </main>
 </template>
 
-<style ></style>
+<style scoped>
+h2 {
+    padding-top: 20px;
+    margin: 20px 0;
+    font-size: 40px;
+    color: white;
+}
+
+main {
+    background-color: darkgray;
+}
+
+.container {
+    max-width: 1428px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+</style>

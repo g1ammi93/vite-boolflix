@@ -15,6 +15,16 @@ export default {
 </template>
 
 <style >
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
 .fas {
     color: rgb(229, 207, 75);
     cursor: pointer;
@@ -23,5 +33,9 @@ export default {
 .far:hover {
     color: rgb(229, 207, 75);
     cursor: pointer;
+}
+
+ul {
+    list-style: none;
 }
 </style>

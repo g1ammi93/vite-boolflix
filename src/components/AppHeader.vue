@@ -48,7 +48,32 @@ export default {
 </script>
 
 <template>
-    <SearchBar @form-submit="searchProduct" @term-change="setTitleFilter" placeholder="Cerca..." buttonLabel="Cerca" />
+    <header class="container">
+        <div>
+            <h1>BOOLFLIX</h1>
+        </div>
+        <div>
+            <SearchBar @form-submit="searchProduct" @term-change="setTitleFilter" placeholder="Cerca..."
+                buttonLabel="Cerca" />
+        </div>
+    </header>
 </template>
 
-<style ></style>
+<style scoped>
+h1 {
+    color: red;
+}
+
+.container {
+    max-width: 1428px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+</style>
