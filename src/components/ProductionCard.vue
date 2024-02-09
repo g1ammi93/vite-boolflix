@@ -88,7 +88,7 @@ span {
 
 .overlay {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 10%;
     right: 10%;
     display: flex;
