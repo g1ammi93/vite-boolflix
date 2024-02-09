@@ -25,6 +25,12 @@ body {
     background-color: black;
 }
 
+.container {
+    max-width: 1428px;
+    margin: 0 auto;
+
+}
+
 .fas {
     color: rgb(229, 207, 75);
     cursor: pointer;

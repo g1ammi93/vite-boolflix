@@ -80,13 +80,27 @@ span {
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 30%;
+    left: 10%;
+    right: 10%;
     display: flex;
     flex-direction: column;
+    display: none;
+    font-size: 18px;
 }
 
 .cover-container {
     position: relative;
+    cursor: pointer;
+}
+
+
+
+.cover-container:hover .overlay {
+    display: inline-block;
+}
+
+.cover-container:hover .cover {
+    filter: blur(50px);
 }
 </style>

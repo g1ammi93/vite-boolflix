@@ -32,16 +32,11 @@ h2 {
     padding-top: 20px;
     margin: 20px 0;
     font-size: 40px;
-    color: white;
+    color: black;
 }
 
 main {
     background-color: darkgray;
-}
-
-.container {
-    max-width: 1428px;
-    margin: 0 auto;
 }
 
 .flex {

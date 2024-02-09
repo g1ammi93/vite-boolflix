@@ -64,14 +64,8 @@ h1 {
     color: red;
 }
 
-.container {
-    max-width: 1428px;
-    margin: 0 auto;
-}
-
 header {
     height: 100px;
-    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
